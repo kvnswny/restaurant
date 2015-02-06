@@ -1,0 +1,20 @@
+<br>
+<form action="/meal" method="POST">
+<ul>Regular
+  <% @menu.each do |item| %>
+  <% if item[:veg] == false %>
+  <li><%= item.name %> $<%= item.price / 100 %> <input type="number"></li>
+  <% end %>
+  <% end %>
+</ul>
+
+<br>
+
+<ul>Vegetarian
+  <% @menu.each do |item| %>
+  <% if item[:veg] == true %>
+  <li><%= item.name %> $<%= item.price / 100 %> <input type="number"></li>
+  <% end %>
+  <% end %>
+</ul>
+</form>

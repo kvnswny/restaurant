@@ -15,7 +15,8 @@ init_parties = <<-SQL
     id          SERIAL        PRIMARY KEY,
     name        TEXT          NOT NULL,
     count       INTEGER       NOT NULL,
-    paid_up     BOOLEAN       NOT NULL,
+    tab         INTEGER,
+    paid_up     BOOLEAN,
     created_at  TIMESTAMP,
     updated_at  TIMESTAMP
   )
@@ -26,7 +27,7 @@ init_foods = <<-SQL
     id          SERIAL        PRIMARY KEY,
     name        TEXT          NOT NULL,
     cuisine     TEXT          NOT NULL,
-    allergy     BOOLEAN       NOT NULL,
+    veg         BOOLEAN       NOT NULL,
     price       INTEGER       NOT NULL,
     created_at  TIMESTAMP,
     updated_at  TIMESTAMP
@@ -37,7 +38,7 @@ init_meals = <<-SQL
   CREATE TABLE meals (
     id          SERIAL        PRIMARY KEY,
     party_id    INTEGER       NOT NULL,
-    total       INTEGER       NOT NULL,
+    food_id     INTEGER       NOT NULL,
     created_at  TIMESTAMP,
     updated_at  TIMESTAMP
   )

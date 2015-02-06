@@ -1,0 +1,9 @@
+nav {
+  list-style-type: none;
+  margin: auto;
+  text-align: center;
+}
+
+nav ul li {
+  display: inline;
+}

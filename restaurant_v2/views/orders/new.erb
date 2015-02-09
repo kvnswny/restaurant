@@ -1,0 +1,18 @@
+<h1>Order for the <%= @party.name %> party</h1>
+
+<table style="50%">
+  <caption>
+  <tr> <th>Name</th> <th>Price</th> <th>#</th> <th>Order</th></tr>
+  <% @foods.each do |food| %>
+      <tr>
+        <form action="/orders" method="post">
+        <td><%= food.name %></td>
+        <td><%= food.price / 100 %></td>
+        <td><%= food.id %></td>
+        <input type="hidden" name="order[party_id]" value="<%= @party.id %>">
+        <input type="hidden" name="order[food_id]" value="<%= food.id %>">
+        <td><input type="submit"></td>
+        </form>
+      </tr>
+  <% end %>
+</table>

@@ -8,7 +8,7 @@ require 'active_record'
 #   port: 5432
 # )
 
-db = PG.connect( dbname: 'restaurant' )
+db = PG.connect( dbname: 'restaurant_v1' )
 
 init_parties = <<-SQL
   CREATE TABLE parties (

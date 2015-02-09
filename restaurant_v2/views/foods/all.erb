@@ -1,0 +1,24 @@
+<table style="50%">
+  <caption>Regular
+  <tr> <th>Name</th> <th>Price</th> </tr>
+  <% @foods.each do |food| %>
+    <% if food[:veg] == false %>
+      <tr>
+        <td><%= food.name %></td>
+        <td><%= food.price / 100 %></td>
+      </tr>
+    <% end %>
+  <% end %>
+</table>
+<table>
+  <caption>Vegetarian
+  <tr><th>Name</th><th>Price</th></tr>
+    <% @foods.each do |food| %>
+      <% if food[:veg] == true %>
+        <tr>
+          <td><%= food.name %></td>
+          <td><%= food.price / 100 %></td>
+        </tr>
+      <% end %>
+    <% end %>
+</table>

@@ -12,7 +12,7 @@ class Restaurant < Sinatra::Base
 
   get "/menu" do
     @menu = Food.all
-    erb :"foods/menu"
+    erb :"foods/all"
   end
 
   get "/menu/add" do

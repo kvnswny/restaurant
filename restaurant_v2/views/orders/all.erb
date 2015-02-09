@@ -1,0 +1,10 @@
+<table style="50%">
+  <caption>
+  <tr> <th>Party</th> <th>Food</th> </tr>
+  <% @orders.each do |order| %>
+      <tr>
+        <td><%= Party.find_by_id(order.party_id).name %></td>
+        <td><%= Food.find_by_id(order.food_id).name %></td>
+      </tr>
+  <% end %>
+</table>

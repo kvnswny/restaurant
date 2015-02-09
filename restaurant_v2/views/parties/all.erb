@@ -1,0 +1,15 @@
+<table style="50%">
+  <caption>
+  <tr> <th>Name</th> <th>Guests</th> <th>#</th> <th>Tab</th> <th>Order</th> <th>Remove</th> </tr>
+  <% @parties.each do |party| %>
+  <% tab = Order.sum(Food.find_by_id(:food_id).price, :party_id => party.id) %>
+      <tr>
+        <td><%= party.name %></td>
+        <td><%= party.headcount %></td>
+        <td><%= party.id %></td>
+        <td><%= tab %></td>
+        <td><a href="/orders/new/<%= party.id %>">Create Order</td>
+        <td><a href="/parties/remove/<%= party.id %>">Remove Party</td>
+      </tr>
+  <% end %>
+</table>

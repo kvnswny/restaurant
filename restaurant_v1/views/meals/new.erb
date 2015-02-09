@@ -1,12 +1,17 @@
 <br>
 <form action="/meal" method="POST">
-<ul>Regular
+<table style="50%">
+<caption>Regular
+  <tr>
+    <th>Name</th>
+    <th>Price</th>
+  </tr>
   <% @menu.each do |item| %>
   <% if item[:veg] == false %>
-  <li><%= item.name %> $<%= item.price / 100 %> <input type="number"></li>
+  <tr><td><%= item.name %></td><td> $<%= item.price / 100 %></td><td> <input type="number"></td></tr>
   <% end %>
   <% end %>
-</ul>
+</table>
 
 <br>
 

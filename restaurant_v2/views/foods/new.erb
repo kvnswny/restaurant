@@ -1,0 +1,10 @@
+<h1>New Menu Item:</h1>
+<form action="/foods" method="post">
+  Name: <input type="text" name="food[name]"><br>
+  Cuisine: <input type="text" name="food[cuisine]"><br>
+  Vegetarian?: <input type="radio" value="true" name="food[veg]">Yes
+               <input type="radio" value="false" name="food[veg]"
+                checked="checked">No<br>
+  Price: <input type="integer" name="food[price]"><br>
+  <input type="submit">
+</form>

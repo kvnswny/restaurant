@@ -1,4 +1,4 @@
-<h1>Order for the <%= @party.name %> party</h1>
+<h1>Order for the <%= @party.name %> party (Party # <%= @party.id %>)</h1>
 
 <table style="50%">
   <caption>
@@ -15,4 +15,27 @@
         </form>
       </tr>
   <% end %>
+</table>
+<br>
+<caption>
+
+<% @counts = Hash.new(0) %>
+<% @cart.each do |item|
+   @counts[item] += 1
+   end %>
+
+<table style="50%">
+  <caption>
+  <% @cart.uniq.each do |item| %>
+    <tr>
+      <td><%= item.name %></td>
+      <td><%= @counts[item] %></td>
+      <td><%= item.price * @counts[item] / 100 %></td>
+    </tr>
+  <% end %>
+    <tfoot>
+      <td>Total</td>
+      <td></td>
+      <td>$<%= @cart.sum(:price) / 100 %></td>
+    </tfoot>
 </table>

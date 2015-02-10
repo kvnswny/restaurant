@@ -74,11 +74,13 @@ class Restaurant < Sinatra::Base
   get "/orders/new/:id" do
     @foods = Food.all
     @party = Party.find_by_id(params[:id])
+    @cart = @party.foods
     erb :"orders/new"
   end
 
   post "/orders" do
     order = Order.create(params[:order])
+    redirect to "/orders/new/#{order.party_id}"
   end
 
 

@@ -4,7 +4,7 @@ require 'bundler'
 Bundler.require :default
 
 set :database, {
-  adapter: "postgresql", database: "restaurant_v2", host: "localhost", port: 5432
+  adapter: "postgresql", database: "restaurant_v2"
 }
 
 require './app'

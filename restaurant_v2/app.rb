@@ -86,9 +86,12 @@ class Restaurant < Sinatra::Base
 
   # Catch
 
+  get "/welcome" do
+    erb :welcome
+  end
+
   get "/*" do
-    "test"
-    erb :layout
+    redirect to "/welcome"
   end
 
 end

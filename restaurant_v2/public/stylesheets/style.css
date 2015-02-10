@@ -29,7 +29,7 @@ body {
   width: 900px;
   margin: 0 auto;
   font-family: Georgia;
-  background: #9f9;
+  background: #9ff;
 }
 
 header {
@@ -45,25 +45,43 @@ header nav {
   right: 0;
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.5);
-  height: 40px;
+  height: 60px;
 }
 
 header > img {
   width: 100%;
 }
 
-header ul {
-  float: right
+.cust {
+  float: none;
+  font-family: "Palatino Linotype";
+  font-size: 1.5em;
+  font-style: bold;
+  color: white;
+}
+
+.emp {
+  color: yellow;
+  font-family: "Verdana";
+  margin-top: 0;
+
+}
+
+nav ul {
+  text-align: center;
 }
 
 nav li {
   display: inline;
   margin: auto;
+  padding-right: 1em;
 }
 
 table {
   border-collapse: collapse;
-  width: 50%;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 td {
@@ -86,6 +104,10 @@ main {
 footer {
   margin-top: 2em;
   border-top: 1px solid black;
-  font-size: 1.5em;
+  font-size: .75em;
   padding: 18px 24px;
+}
+
+.copywrite {
+  text-align: center;
 }

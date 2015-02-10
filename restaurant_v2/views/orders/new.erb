@@ -1,6 +1,7 @@
-<h1>Order for the <%= @party.name %> party (Party # <%= @party.id %>)</h1>
+<h1 style="text-align:center">Order for the <%= @party.name %> party (Table #<%= @party.id %>):</h1>
+<br>
 
-<table style="50%">
+<table style="75%">
   <caption>
   <tr> <th>Name</th> <th>Price</th> <th>#</th> <th>Order</th></tr>
   <% @foods.each do |food| %>
@@ -11,7 +12,7 @@
         <td><%= food.id %></td>
         <input type="hidden" name="order[party_id]" value="<%= @party.id %>">
         <input type="hidden" name="order[food_id]" value="<%= food.id %>">
-        <td><input type="submit"></td>
+        <td><input type="submit" text="Add"></td>
         </form>
       </tr>
   <% end %>
@@ -33,9 +34,24 @@
       <td><%= item.price * @counts[item] / 100 %></td>
     </tr>
   <% end %>
-    <tfoot>
-      <td>Total</td>
+
+
+  <tfoot>
+    <tr>
+      <td>Subtotal</td>
       <td></td>
       <td>$<%= @cart.sum(:price) / 100 %></td>
-    </tfoot>
+    </tr>
+
+    <tr>
+      <td><form action="tip">Tip:
+        <input type="checkbox" name="tip" value="15">15%
+        <input type="checkbox" name="tip" value="25">25
+        <input type="checkbox" name="tip" value="35">35%
+      </td>
+      <td></td>
+      <td></td>
+      </form>
+    </tr>
+  </tfoot>
 </table>

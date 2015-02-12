@@ -16,6 +16,8 @@ end
 class Restaurant < Sinatra::Base
   register Sinatra::ActiveRecordExtension
 
+  set :method_override, true
+
   get "/console" do
     Pry.start(binding)
     ""
@@ -59,8 +61,8 @@ class Restaurant < Sinatra::Base
   end
 
   delete "/parties/remove/:id" do
-    # @party = Party.find_by_id(params[:id])
-    Party.destroy(@party)
+    @party = Party.find(params[:id])
+    @party.destroy
     redirect to "/parties/all"
   end
 

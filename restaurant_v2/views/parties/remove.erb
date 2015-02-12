@@ -1,6 +1,7 @@
 <h1>Confirm delete for <%= @party.name %> party?</h1>
 
-<form action="/parties" method="_method" value="delete">
-  <input type="hidden" name="party[party_id]" value="<%= @party.id %>">
+<form action="/parties/remove/<%= @party.id %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+
   <input type="submit">Confirm?</input>
 </form>
